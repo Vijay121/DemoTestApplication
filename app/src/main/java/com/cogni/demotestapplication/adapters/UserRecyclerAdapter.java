@@ -42,7 +42,8 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
                 .load(hero.getImageHref())
                 .into(holder.mImageView);
 
-        holder.mTextView.setText(hero.getTitle());
+        holder.mTextviewTitle.setText(hero.getTitle());
+        holder.mTextViewDescription.setText(hero.getDescription());
     }
 
     @Override
@@ -53,13 +54,15 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
     class UserViewHolder extends RecyclerView.ViewHolder {
 
         ImageView mImageView;
-        TextView mTextView;
+        TextView mTextviewTitle;
+        TextView mTextViewDescription;
 
         public UserViewHolder(View itemView) {
             super(itemView);
 
-            mImageView = itemView.findViewById(R.id.img_card);
-            mTextView = itemView.findViewById(R.id.txt_title);
+            mImageView = itemView.findViewById(R.id.img_user);
+            mTextviewTitle = itemView.findViewById(R.id.txt_title);
+            mTextViewDescription = itemView.findViewById(R.id.txt_description);
         }
     }
 }
