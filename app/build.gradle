@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
@@ -9,8 +10,12 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -55,4 +60,23 @@ dependencies {
     //cardview
     implementation "androidx.cardview:cardview:${rootProject.ext.cardview_version}"
 
+    //roboelectric
+    testImplementation "org.robolectric:robolectric:${rootProject.ext.robolectricVersion}"
+    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestUtil 'androidx.test:orchestrator:1.1.0'
+
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.0'
+    // Optional -- Hamcrest library
+    androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
+    // Optional -- UI testing with Espresso
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    // Optional -- UI testing with UI Automator
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+}
+repositories {
+    mavenCentral()
 }
