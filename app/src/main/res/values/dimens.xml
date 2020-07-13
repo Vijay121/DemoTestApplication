@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="imageview_dimension">100dp</dimen>
-    <dimen name="textview_text_size">25sp</dimen>
+    <dimen name="imageview_dimension">80dp</dimen>
+    <dimen name="textview_text_size">20sp</dimen>
     <dimen name="textview_margin_top">10dp</dimen>
     <dimen name="cardview_padding">5dp</dimen>
-    <dimen name="margin_top">50dp</dimen>
+    <dimen name="margin_top">30dp</dimen>
 
     <dimen name="card_elevation">5dp</dimen>
     <dimen name="margin_end">5dp</dimen>
