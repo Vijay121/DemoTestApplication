@@ -40,6 +40,8 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
 
         Glide.with(mCtx)
                 .load(hero.getImageHref())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
                 .into(holder.mImageView);
 
         holder.mTextviewTitle.setText(hero.getTitle());

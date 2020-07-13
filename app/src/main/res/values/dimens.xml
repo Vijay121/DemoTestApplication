@@ -5,4 +5,8 @@
     <dimen name="textview_margin_top">10dp</dimen>
     <dimen name="cardview_padding">5dp</dimen>
     <dimen name="margin_top">50dp</dimen>
+
+    <dimen name="card_elevation">5dp</dimen>
+    <dimen name="margin_end">5dp</dimen>
+    <dimen name="textview_width">0dp</dimen>
 </resources>

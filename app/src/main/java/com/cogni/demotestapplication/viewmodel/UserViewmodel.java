@@ -1,5 +1,7 @@
 package com.cogni.demotestapplication.viewmodel;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -19,7 +21,7 @@ public class UserViewmodel extends ViewModel {
     private MutableLiveData<UserContentData> userContentDataMutableLiveData;
 
     //we will call this method to get the data
-    public LiveData<UserContentData> getHeroes() {
+    public LiveData<UserContentData> getUserData() {
         //if the list is null
         if (userContentDataMutableLiveData == null) {
             userContentDataMutableLiveData = new MutableLiveData<>();
@@ -53,8 +55,9 @@ public class UserViewmodel extends ViewModel {
 
             @Override
             public void onFailure(Call<UserContentData> call, Throwable t) {
-
+                Log.i("UserViewmodel", "onFailure: " + t.getMessage());
             }
         });
     }
+
 }
